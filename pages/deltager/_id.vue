@@ -14,10 +14,9 @@
             <strong>{{ activities | totalPoints }} poeng</strong> i cup'en og du er
             <strong>{{ activities | totalKm }} km</strong> på vei mot distansemerket.
           </p>
-          <div class="actions">
-            <a v-show="profile && !profile.firstName" class="typeform-share button is-primary is-outlined is-medium" :href="'https://lillylabs.typeform.com/to/q4IMh7?uid=' + uid" data-mode="popup" data-submit-close-delay="0" target="_blank">Fullfør profil</a>
-            <a class="typeform-share button is-primary is-medium" :href="'https://lillylabs.typeform.com/to/tLJKRt?uid=' + uid" data-mode="popup" data-submit-close-delay="0" target="_blank">Registrer ny aktivitet</a>
-          </div>
+          <no-ssr>
+            <TypeForm></TypeForm>
+          </no-ssr>
         </div>
       </div>
     </section>
@@ -57,7 +56,7 @@
 </template>
 
 <script>
-
+import TypeForm from '~/components/TypeForm.vue'
 import { mapMutations, mapState } from 'vuex'
 const KM_PER_HOUR_ALPINE = 4
 
@@ -74,7 +73,7 @@ function alpineAndCrossCountry (alpineHours, crossCountryKm) {
 
 export default {
   components: {
-
+    TypeForm
   },
   computed: {
     ...mapState({
@@ -182,10 +181,7 @@ export default {
 .subtitle {
   max-width: 30rem;
   margin: 0 auto;
-}
-
-.actions {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .button+.button {
