@@ -7,7 +7,7 @@
       <div class="hero-body" v-if="ready">
         <div class="container has-text-centered">
           <h1 class="title is-spaced">
-            <span>Hei {{ user.email }}</span>
+            <span>Hei {{ name }}</span>
             <button @click="signOutUser()" class="button is-primary is-outlined is-small">Logg ut</button>
           </h1>
           <p class="subtitle">Så langt denne sesongen har du samlett
@@ -96,14 +96,15 @@ export default {
   },
   computed: {
     ...mapState({
-      ready: (store) => store.activities,
+      ready: (store) => store.user.activities && store.user.profile,
       user: (store) => store.auth.user,
+      profile: (store) => store.user.profile,
       activities: (store) => {
-        if (!store.activities) {
+        if (!store.user.activities) {
           return []
         }
-        return Object.keys(store.activities).map((key) => {
-          return store.activities[key]
+        return Object.keys(store.user.activities).map((key) => {
+          return store.user.activities[key]
         }).sort((a, b) => {
           if (!b.date) {
             return -1
@@ -111,8 +112,10 @@ export default {
           return a.date > b.date ? -1 : 1
         })
       }
-    })
-
+    }),
+    name () {
+      return this.profile.name ? this.profile.name : this.user.email
+    }
   },
   methods: {
     ...mapMutations({

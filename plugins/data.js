@@ -13,19 +13,24 @@ export const data = store => {
   const firebase = Firebase.initializeApp(config)
 
   const db = firebase.database()
-  let userActivities = null
+  let userRefs = []
 
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       console.log(user.email, user.uid)
       store.commit('auth/userSignedIn', { uid: user.uid, email: user.email })
-      userActivities = db.ref('activities/' + user.uid)
-      userActivities.on('value', (snapshot) => {
-        store.commit('activities', snapshot.val())
-      })
+      userRefs.push(db.ref('activities/' + user.uid).on('value', (snapshot) => {
+        store.commit('user/activities', snapshot.val())
+      }))
+      userRefs.push(db.ref('profile/' + user.uid).on('value', (snapshot) => {
+        console.log('date', snapshot.val())
+        store.commit('user/profile', snapshot.val())
+      }))
     } else {
       console.log('no user')
-      userActivities.off()
+      userRefs.forEach(ref => {
+        ref.off('value')
+      })
       store.commit('auth/userSignedOut')
     }
   })
