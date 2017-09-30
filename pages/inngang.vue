@@ -11,15 +11,6 @@
           </button>
         </div>
         <form class="form" @submit.prevent="submit()">
-          <div v-if="signup" class="field">
-            <label class="label">Navn</label>
-            <div class="control has-icons-left has-icons-right">
-              <input v-model="name" class="input" placeholder="Ola Nordmann">
-              <span class="icon is-small is-left">
-                <i class="fa fa-user"></i>
-              </span>
-            </div>
-          </div>
           <div class="field">
             <label class="label">E-post</label>
             <div class="control has-icons-left has-icons-right">

@@ -37,6 +37,11 @@ export default {
     signingIn () {
       return this.status === 'SIGNING_IN'
     }
+  },
+  fetch ({ store, redirect }) {
+    if (store.state.auth.user) {
+      return redirect('/deltager')
+    }
   }
 }
 </script>

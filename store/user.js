@@ -10,7 +10,6 @@ export const mutations = {
     state.activities = activities
   },
   profile (state, profile) {
-    console.log(profile)
     profile = profile || {}
     state.profile = profile
   }

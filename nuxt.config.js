@@ -28,6 +28,9 @@ module.exports = {
     { src: '~/assets/main.scss', lang: 'scss' },
     { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
   ],
+  plugins: [
+    { src: '~plugins/typeform.js', ssr: false }
+  ],
   /*
   ** Build configuration
   */

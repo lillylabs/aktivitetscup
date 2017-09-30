@@ -4,9 +4,9 @@
       <div class="hero-body" v-if="!ready">
         <span class="button is-large is-static is-primary is-outlined is-loading"></span>
       </div>
-      <div class="hero-body" v-if="ready">
+      <div class="hero-body" v-show="ready">
         <div class="container has-text-centered">
-          <h1 class="title is-spaced">
+          <h1 v-if="profile" class="title is-spaced">
             <span>Hei {{ name }}</span>
             <button @click="signOutUser()" class="button is-primary is-outlined is-small">Logg ut</button>
           </h1>
@@ -15,32 +15,14 @@
             <strong>{{ activities | totalKm }} km</strong> på vei mot distansemerket.
           </p>
           <div class="actions">
-            <a class="typeform-share button is-primary is-medium" :href="'https://lillylabs.typeform.com/to/tLJKRt?uid=' + user.uid" data-mode="popup" data-submit-close-delay="0" target="_blank">Registrer ny aktivitet </a>
-
-            <script>
-            /* eslint-disable */
-            (function() {
-              var qs, js, q, s, d = document,
-                gi = d.getElementById,
-                ce = d.createElement,
-                gt = d.getElementsByTagName,
-                id = 'typef_orm_share',
-                b = 'https://embed.typeform.com/';
-              if (!gi.call(d, id)) {
-                js = ce.call(d, 'script')
-                js.id = id
-                js.src = b + 'embed.js';
-                q = gt.call(d, 'script')[0]
-                q.parentNode.insertBefore(js, q)
-              }
-            })()
-            </script>
+            <a v-show="profile && !profile.firstName" class="typeform-share button is-primary is-outlined is-medium" :href="'https://lillylabs.typeform.com/to/q4IMh7?uid=' + uid" data-mode="popup" data-submit-close-delay="0" target="_blank">Fullfør profil</a>
+            <a class="typeform-share button is-primary is-medium" :href="'https://lillylabs.typeform.com/to/tLJKRt?uid=' + uid" data-mode="popup" data-submit-close-delay="0" target="_blank">Registrer ny aktivitet</a>
           </div>
         </div>
       </div>
     </section>
-    <section class="section">
-      <div v-if="user && activities.length > 0" class="container">
+    <section v-if="user && activities.length > 0" class="section">
+      <div class="container">
         <table class="table is-bordered is-striped">
           <thead>
             <tr>
@@ -99,6 +81,7 @@ export default {
       ready: (store) => store.user.activities && store.user.profile,
       user: (store) => store.auth.user,
       profile: (store) => store.user.profile,
+      needsProfile: (store) => store.user.needsProfile,
       activities: (store) => {
         if (!store.user.activities) {
           return []
@@ -113,8 +96,11 @@ export default {
         })
       }
     }),
+    uid () {
+      return this.user ? this.user.uid : ''
+    },
     name () {
-      return this.profile.name ? this.profile.name : this.user.email
+      return this.profile.firstName ? this.profile.firstName : this.user.email
     }
   },
   methods: {
@@ -200,6 +186,10 @@ export default {
 
 .actions {
   margin-top: 2rem;
+}
+
+.button+.button {
+  margin-left: 1rem;
 }
 
 .table {
