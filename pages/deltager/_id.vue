@@ -1,8 +1,11 @@
 <template>
   <div>
-    <section class="hero is-light ">
-      <div class="hero-body">
-        <div v-if="user" class="container has-text-centered">
+    <section class="hero is-light" :class="{'is-fullheight': !ready || activities.length == 0}">
+      <div class="hero-body" v-if="!ready">
+        <span class="button is-large is-static is-primary is-outlined is-loading"></span>
+      </div>
+      <div class="hero-body" v-if="ready">
+        <div class="container has-text-centered">
           <h1 class="title is-spaced">
             <span>Hei {{ user.email }}</span>
             <button @click="signOutUser()" class="button is-primary is-outlined is-small">Logg ut</button>
@@ -12,7 +15,26 @@
             <strong>{{ activities | totalKm }} km</strong> på vei mot distansemerket.
           </p>
           <div class="actions">
-            <button class="button is-primary is-medium">Registrer ny aktivitet</button>
+            <a class="typeform-share button is-primary is-medium" :href="'https://lillylabs.typeform.com/to/tLJKRt?uid=' + user.uid" data-mode="popup" data-submit-close-delay="0" target="_blank">Registrer ny aktivitet </a>
+
+            <script>
+            /* eslint-disable */
+            (function() {
+              var qs, js, q, s, d = document,
+                gi = d.getElementById,
+                ce = d.createElement,
+                gt = d.getElementsByTagName,
+                id = 'typef_orm_share',
+                b = 'https://embed.typeform.com/';
+              if (!gi.call(d, id)) {
+                js = ce.call(d, 'script')
+                js.id = id
+                js.src = b + 'embed.js';
+                q = gt.call(d, 'script')[0]
+                q.parentNode.insertBefore(js, q)
+              }
+            })()
+            </script>
           </div>
         </div>
       </div>
@@ -74,15 +96,21 @@ export default {
   },
   computed: {
     ...mapState({
+      ready: (store) => store.activities,
       user: (store) => store.auth.user,
-      activities: (store) => Object.keys(store.activities).map((key) => {
-        return store.activities[key]
-      }).sort((a, b) => {
-        if (!b.date) {
-          return -1
+      activities: (store) => {
+        if (!store.activities) {
+          return []
         }
-        return a.date > b.date ? -1 : 1
-      })
+        return Object.keys(store.activities).map((key) => {
+          return store.activities[key]
+        }).sort((a, b) => {
+          if (!b.date) {
+            return -1
+          }
+          return a.date > b.date ? -1 : 1
+        })
+      }
     })
 
   },
@@ -145,6 +173,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "assets/utilities";
+
+.button.is-loading {
+  padding: 3rem;
+  margin: 0 auto;
+}
+
 .section {
   background: $white;
 }
