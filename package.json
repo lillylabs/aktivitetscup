@@ -13,8 +13,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "firebase": "^4.4.0",
     "font-awesome": "^4.7.0",
-    "nuxt": "^1.0.0-rc11"
+    "nuxt": "^1.0.0-rc11",
+    "promise-polyfill": "^6.0.2",
+    "vuefire": "^1.4.4"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

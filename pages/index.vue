@@ -22,10 +22,21 @@
 import About from '~/components/About.vue'
 import NavBar from '~/components/NavBar.vue'
 
+import { mapState } from 'vuex'
+
 export default {
   components: {
     About,
     NavBar
+  },
+  computed: {
+    ...mapState({
+      user: state => state.auth.user,
+      status: state => state.auth.status
+    }),
+    signingIn () {
+      return this.status === 'SIGNING_IN'
+    }
   }
 }
 </script>

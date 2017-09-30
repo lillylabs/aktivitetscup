@@ -9,14 +9,17 @@
           <span>Om cupen</span>
         </nuxt-link>
       </span>
-      <span class="nav-item">
-        <nuxt-link to="/inngang" class="button">
-          <span>Logg inn</span>
-        </nuxt-link>
-      </span>
     </div>
   </header>
 </template>
+
+<script>
+
+export default {
+
+}
+</script>
+
 
 <style lang="scss" scoped>
 .navbar-brand {

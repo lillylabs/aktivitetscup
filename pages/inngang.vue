@@ -10,37 +10,29 @@
             Bli med
           </button>
         </div>
-        <form class="form">
+        <form class="form" @submit.prevent="submit()">
           <div v-if="signup" class="field">
             <label class="label">Navn</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input" placeholder="Ola Nordmann">
+              <input v-model="name" class="input" placeholder="Ola Nordmann">
               <span class="icon is-small is-left">
                 <i class="fa fa-user"></i>
               </span>
-              <span v-if="error.name" class="icon is-small is-right">
-                <i class="fa fa-warning"></i>
-              </span>
             </div>
-            <p v-if="error.name" class="help is-danger">{{ error.name.message }}</p>
           </div>
           <div class="field">
             <label class="label">E-post</label>
             <div class="control has-icons-left has-icons-right">
-              <input class="input" type="email" placeholder="ola@ski.no">
+              <input v-model="email" class="input" type="email" placeholder="ola@ski.no">
               <span class="icon is-small is-left">
                 <i class="fa fa-envelope"></i>
               </span>
-              <span v-if="error.email" class="icon is-small is-right">
-                <i class="fa fa-warning"></i>
-              </span>
             </div>
-            <p v-if="error.email" class="help is-danger">{{ error.email.message }}</p>
           </div>
           <div class="field">
             <label class="label">Passord</label>
             <div class="control has-icons-left">
-              <input class="input" type="password" placeholder="veldighemmelig">
+              <input v-model="password" class="input" type="password" placeholder="veldighemmelig">
               <span class="icon is-small is-left">
                 <i class="fa fa-lock"></i>
               </span>
@@ -50,7 +42,7 @@
             <div class="control">
               <input type="submit" class="button is-primary" :value="signup ? 'Registrer' : 'Logg inn'">
             </div>
-            <p v-if="error.general" class="help is-danger">{{ error.general.message }}</p>
+            <p v-if="error" class="help is-danger">{{ error.message }}</p>
           </div>
         </form>
       </div>
@@ -60,25 +52,55 @@
 
 <script>
 
+import { mapMutations, mapState } from 'vuex'
+
 export default {
   components: {
 
   },
   data () {
     return {
-      signup: false,
-      error: {
-        name: null,
-        email: null,
-        general: null
-      }
+      name: null,
+      email: null,
+      password: null,
+      signup: false
     }
   },
   computed: {
+    ...mapState({
+      error: state => state.auth.error,
+      user: state => state.auth.user
+    })
+  },
+  methods: {
+    ...mapMutations({
+      signUpUser: 'auth/signUpUser',
+      signInUser: 'auth/signInUser'
+    }),
+    submit () {
+      let credentials = { email: this.email, password: this.password }
+      if (this.signup) {
+        this.signUpUser(credentials)
+      } else {
+        this.signInUser(credentials)
+      }
+    }
 
+  },
+  watch: {
+    user (newUser, oldUser) {
+      if (newUser) {
+        this.$router.push('deltager')
+      }
+    }
   },
   mounted () {
     this.signup = this.$route.params.signup
+  },
+  fetch ({ store, redirect }) {
+    if (store.state.auth.user) {
+      return redirect('/deltager')
+    }
   }
 }
 </script>
