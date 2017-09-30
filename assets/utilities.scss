@@ -1,0 +1,21 @@
+@import "~bulma/sass/utilities/initial-variables";
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// 1. Initial variables
+
+$radius-small: 0;
+$radius: 0;
+$radius-large: 0;
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// 2. Primary colors
+
+$primary: #0079cf;
+// $primary-invert: $orange-invert;
+
+@import "~bulma/sass/utilities/functions";
+@import "~bulma/sass/utilities/derived-variables";
+@import "~bulma/sass/utilities/animations";
+@import "~bulma/sass/utilities/mixins";
+@import "~bulma/sass/utilities/controls";

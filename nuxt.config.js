@@ -16,7 +16,14 @@ module.exports = {
   /*
   ** Customize the progress bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#0079cf' },
+  /*
+  ** Include css not in components
+  */
+  css: [
+    { src: '~/assets/main.scss', lang: 'scss' },
+    { src: 'font-awesome/scss/font-awesome.scss', lang: 'scss' }
+  ],
   /*
   ** Build configuration
   */

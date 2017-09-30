@@ -1,0 +1,59 @@
+html,
+body {
+  height: 100%;
+  background-image: url(~/assets/background.jpeg);
+  background-blend-mode: multiply;
+  background-size: cover;
+}
+
+.content a:not(.button) {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 40rem;
+
+  .hero & {
+    max-width: 50rem;
+  }
+}
+
+.hero.is-fullheight {
+  min-height: calc(100vh - 3.25rem);
+}
+
+.hero.is-light {
+  background: transparent;
+}
+
+.button {
+  font-weight: 600;
+  border-width: 2px;
+}
+
+.button.is-primary.is-outlined {
+  &:hover,
+  &:focus {
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+  }
+}
+
+.help {
+  font-size: 0.85rem;
+}
+
+// .button.is-primary:not(.is-outlined) {
+//   text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.2);
+// }
+
+////////////////////////////////////////////////
+////////////////////////////////////////////////
+// Page transitions
+
+.page-enter-active, .page-leave-active {
+  transition: opacity 250ms;
+}
+.page-enter, .page-leave-to {
+  opacity: 0;
+}
