@@ -1,5 +1,5 @@
-#config
-config/*
+#private
+.private
 
 # dependencies
 node_modules

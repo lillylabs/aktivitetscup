@@ -13,6 +13,10 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  env: {
+    firebaseApiKey: process.env.FIREBASE_API_KEY
+  },
+
   /*
   ** Customize the progress bar color
   */

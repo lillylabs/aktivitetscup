@@ -1,6 +1,11 @@
-import config from '~/config/config'
-
 let Firebase = require('firebase')
+
+let config = {
+  apiKey: process.env.firebaseApiKey,
+  authDomain: 'aktivitetscup-skiforbundet.firebaseapp.com',
+  databaseURL: 'https://aktivitetscup-skiforbundet.firebaseio.com',
+  projectId: 'aktivitetscup-skiforbundet'
+}
 
 export const data = store => {
   if (!process.browser) return
