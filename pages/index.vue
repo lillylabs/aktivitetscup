@@ -2,8 +2,14 @@
   <section class="hero is-light  is-fullheight">
     <div class="hero-body has-text-centered">
       <div class="container">
-        <p class="title">
-          Velkommen til Activitetscup for mennesker med utviklingshemning i regi av Norges&nbsp;Skiforbund.
+        <div class="logo">
+          <img src="~/assets/logo.png"></img>
+        </div>
+        <div class="sponsor">
+          i samarbeid med
+          <img src="~/assets/assistermeg.png"></img>
+        </div>
+        <p class="title"> Velkommen til Activitetscup for mennesker med utviklingshemning i regi av Norges&nbsp;Skiforbund.
         </p>
         <div class="actions">
           <nuxt-link :to="{ name: 'inngang', params: { signup: true }}" class="button is-medium is-primary">
@@ -47,6 +53,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.logo,
+.sponsor {
+  margin: 0 1rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  max-width: 10rem;
+}
+
+.sponsor {
+  max-width: 8rem;
+
+  img {
+    margin-top: 0.5rem;
+  }
+}
+
 .actions {
   margin: 0 auto;
   margin-top: 3rem;
