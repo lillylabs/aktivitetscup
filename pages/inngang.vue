@@ -85,7 +85,7 @@ export default {
       }
     }
   },
-  mounted () {
+  beforeMount () {
     this.signup = this.$route.params.signup
   },
   fetch ({ store, redirect }) {

@@ -14,9 +14,7 @@
             <strong>{{ activities | totalPoints }} poeng</strong> i cup'en og du er
             <strong>{{ activities | totalKm }} km</strong> på vei mot distansemerket.
           </p>
-          <no-ssr>
-            <TypeForm></TypeForm>
-          </no-ssr>
+          <FormActions></FormActions>
         </div>
       </div>
     </section>
@@ -56,7 +54,7 @@
 </template>
 
 <script>
-import TypeForm from '~/components/TypeForm.vue'
+import FormActions from '~/components/FormActions.vue'
 import { mapMutations, mapState } from 'vuex'
 const KM_PER_HOUR_ALPINE = 4
 
@@ -73,7 +71,7 @@ function alpineAndCrossCountry (alpineHours, crossCountryKm) {
 
 export default {
   components: {
-    TypeForm
+    FormActions
   },
   computed: {
     ...mapState({
