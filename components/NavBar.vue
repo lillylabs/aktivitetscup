@@ -5,7 +5,7 @@
         Aktivitetscup
       </nuxt-link>
       <span class="nav-item">
-        <nuxt-link to="/#">
+        <nuxt-link to="/info">
           <span>Om cupen</span>
         </nuxt-link>
       </span>
