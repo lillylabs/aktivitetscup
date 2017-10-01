@@ -9,7 +9,7 @@
           i samarbeid med
           <img src="~/assets/assistermeg.png"></img>
         </div>
-        <p class="title"> Velkommen til Activitetscup for mennesker med utviklingshemning i regi av Norges&nbsp;Skiforbund.
+        <p class="title"> Velkommen til Aktivitetscup for mennesker med psykisk utviklingshemming.
         </p>
         <div class="actions">
           <nuxt-link :to="{ name: 'inngang', params: { signup: true }}" class="button is-medium is-primary">

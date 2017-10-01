@@ -7,7 +7,7 @@
             Logg inn
           </button>
           <button class="button is-primary" @click="signup = true" :class="{ 'is-selected': signup, 'is-outlined': !signup }">
-            Bli med
+            Bli deltager
           </button>
         </div>
         <form class="form" @submit.prevent="submit()">

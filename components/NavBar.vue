@@ -6,7 +6,7 @@
       </nuxt-link>
       <span class="nav-item">
         <nuxt-link to="/info">
-          <span>Om cupen</span>
+          <span>Informasjon</span>
         </nuxt-link>
       </span>
     </div>
