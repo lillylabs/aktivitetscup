@@ -16,8 +16,6 @@
           <li>Fyll ut din profil slik at vi vet hvem du er</li>
           <li>Registerer dine aktiviteter fortløpende</li>
         </ul>
-        
-        <img src="filnavn.png" alt="Kort beskrivelse av bildet"></img>
 
         <p>Ved å delta i Aktivitetcup'en blir du automatisk med i konkurransen om å samle flest poeng.</p>
         <p>På slutten av sesongen blir deltagerne (en kvinne og en mann) med flest poeng premiert.</p>
