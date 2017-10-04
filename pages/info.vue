@@ -12,15 +12,14 @@
             <h2>Bli med på 1-2-3</h2>
             <ol>
                 <li>Skriv inn eposten din og passordet ditt.</li>
-                <li>Øv på å registrere en liksomaktivitet, ikke trykk «Send inn».</li>
-                <li>Registrer en ekte aktivitet, trykk «Send inn».</li>
+                <li>Legg inn en aktivitet i Aktivitetscupen.</li>
+                <li>Registrer enda en aktivitet.</li>
             </ol>
 
             <p>Se på bruksanvisningen først eller vær gær'n og bli med uten å se på bruksanvisningen.</p>
-            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> </p>
+            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Legg inn eposten din</nuxt-link> </p>
 
 
-            <p>Oppskrift 1</p>
             <h2>Meld deg på Aktivitetscupen</h2>
 
             <img src="/2_Sign_up_1_IMG_0003.PNG" alt="Sign up 1 "></img>
@@ -30,20 +29,8 @@
             <p>Bruk et passord som er lett å huske, men hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang.</p>
 
             <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> </p>
-
-            <p>Oppskrift 2</p>
-            <h2>Øv med en liksomaktivitet</h2>
-            <p>Det er lettere å registrere den første aktiviteten hvis du øver på å registrere en liksomaktivitet.</p>
-
-            <img src="/4_liksomaktivitet_1_IMG_0005_1.jpg" alt="Registrer ny liksomaktivitet 1"></img>
-
-            <img src="/5_liksomaktivitet_2_IMG_0013.2.jpg" alt="5 liksomaktivitet 2"></img>
-            <p>Ikke trykk "send"</p>
-            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> </p>
-
-            <p>Oppskrift 3</p>
-            <h2>Registrer en ekte aktivitet i Aktivitetscupen</h2>
-            <p>Registrer en ekte aktivitet, avslutt med å trykke «Send inn».</p>
+           
+            <h2>Registrer en aktivitet i Aktivitetscupen</h2>          
 
             <img src="/4_liksomaktivitet_1_IMG_0005_1.jpg" alt="Registrer ny aktivitet"></img>
 
@@ -59,14 +46,14 @@
 
             <img src="/12_trykk_send_inn_IMG_0018.2.jpg" alt="trykk send inn"></img>
 
-            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> </p>
+            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Bli med nå</nuxt-link> </p>
 
             <img src="/1_Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå.png" alt="aCup"></img>
 
             <h2>Ny sesong, ny aktivitetscup</h2>
             <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang og er litt enklere å bruke enn forrige sesong.</p>
 
-            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> </p>
+            <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Jeg er med!</nuxt-link> </p>
 
             <h2>Ta kontakt</h2>
             <p>Send ros, spørsmål og problemer til aktivitetscup@gmail.com.</p>
