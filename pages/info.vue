@@ -14,7 +14,7 @@
           <img src="/1_Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå.png" alt="aCup"></img>
         </p>
 
-        <p><strong>Trene. Telle. Trene.</strong></p>
+        <h2>Trene. Telle. Trene.</h2>
   
         <p>Aktivitetscup gjør aktivisering av en utøver med utviklingshemning LITT lettere.</p>
       
