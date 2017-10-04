@@ -68,7 +68,7 @@
         </p>
        
         <h2>Ny sesong, ny aktivitetscup</h2>
-        <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang og er litt enklere å bruke enn forrige sesong.</p>
+        <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang. Vi har også fått en deilig ny oversikt over hvilke aktiviteter som er registrert.</p>
 
         <p>
           <nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Jeg er med!</nuxt-link>
