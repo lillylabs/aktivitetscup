@@ -1,6 +1,9 @@
 html,
 body {
   height: 100%;
+  background-image: url(~/assets/background.jpeg);
+  background-blend-mode: multiply;
+  background-size: cover;
 }
 
 .content a:not(.button) {
@@ -13,6 +16,10 @@ body {
   .hero & {
     max-width: 50rem;
   }
+}
+
+.hero.is-light {
+  background-color: transparent;
 }
 
 .hero.is-fullheight {
