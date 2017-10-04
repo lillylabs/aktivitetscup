@@ -80,4 +80,8 @@
 .section {
   background: $white;
 }
+
+img {
+  vertical-align: top;
+}
 </style>
