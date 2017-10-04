@@ -9,6 +9,15 @@
     </header>
     <section class="section content">
       <div class="container">
+      
+        <p>
+          <img src="/1_Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå.png" alt="aCup"></img>
+        </p>
+
+        <p><strong>Trene. Telle. Trene.</strong></p>
+  
+        <p>Aktivitetscup gjør aktivisering av en utøver med utviklingshemning LITT lettere.</p>
+      
         <h2>Bli med på 1-2-3</h2>
         <ol>
           <li>Skriv inn eposten din og passordet ditt.</li>
@@ -57,10 +66,7 @@
         <p>
           <nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Bli med nå</nuxt-link>
         </p>
-        <p>
-          <img src="/1_Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå.png" alt="aCup"></img>
-        </p>
-
+       
         <h2>Ny sesong, ny aktivitetscup</h2>
         <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang og er litt enklere å bruke enn forrige sesong.</p>
 
