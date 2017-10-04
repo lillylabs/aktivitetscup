@@ -11,6 +11,8 @@
           </button>
         </div>
         <form class="form" @submit.prevent="submit()">
+          <h1 class="title is-3" v-if="signup">Bli deltager</h1>
+          <h1 class="title is-3" v-else>Logg inn</h1>
           <div class="field">
             <label class="label">E-post</label>
             <div class="control has-icons-left has-icons-right">
