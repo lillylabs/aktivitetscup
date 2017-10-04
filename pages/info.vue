@@ -9,19 +9,11 @@
       </header>
       <section class="section content">
         <div class="container">
-
-            <p><strong>Trene. Telle. Trene.</strong></p>
-  
-            <p>Å aktivisere utviklingshemmede blir LITT lettere med Aktivitetscup.</p>
-
-            <img src="/Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå-300x300.png" alt="aCup"></img>
-
-
             <h2>Bli med på 1-2-3</h2>
             <ol>
-                <li>1 Skriv inn eposten din og passordet ditt.</li>
-                <li>2 Øv på å registrere en liksomaktivitet, ikke trykk «Send inn».</li>
-                <li>3 Registrer en ekte aktivitet, trykk «Send inn».</li>
+                <li>Skriv inn eposten din og passordet ditt.</li>
+                <li>Øv på å registrere en liksomaktivitet, ikke trykk «Send inn».</li>
+                <li>Registrer en ekte aktivitet, trykk «Send inn».</li>
             </ol>
 
             <p>Se på bruksanvisningen først eller vær gær'n og bli med uten å se på bruksanvisningen.</p>
@@ -68,6 +60,8 @@
             <img src="/12 trykk send inn IMG_0018.2.jpg" alt="trykk send inn"></img>
 
             <p><nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> </p>
+
+            <img src="/Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå-300x300.png" alt="aCup"></img>
 
             <h2>Ny sesong, ny aktivitetscup</h2>
             <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang og er litt enklere å bruke enn forrige sesong.</p>
