@@ -9,12 +9,12 @@
       </header>
       <section class="section content">
         <div class="container">
-  
+
             <p><strong>Trene. Telle. Trene.</strong></p>
   
             <p>Å aktivisere utviklingshemmede blir LITT lettere med Aktivitetscup.</p>
 
-            <img src="/Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå-300x300.png" alt="aCup"></img>
+            <img src="~/assets/Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå-300x300.png" alt="aCup"></img>
 
 
             <h2>Bli med på 1-2-3</h2>
