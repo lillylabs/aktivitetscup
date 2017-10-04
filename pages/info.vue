@@ -1,46 +1,88 @@
 <template>
-  <article>
-    <header class="hero is-light">
-      <div class="container">
-        <div class="hero-body has-text-centered">
-          <h1 class="title">Informasjon</h1>
+    <article>
+      <header class="hero is-light">
+        <div class="container">
+          <div class="hero-body has-text-centered">
+            <h1 class="title">Informasjon</h1>
+          </div>
         </div>
-      </div>
-    </header>
-    <section class="section content">
-      <div class="container">
-        <h2>Slik fungerer det</h2>
-        <ul>
-          <li>
-            <nuxt-link :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link> som deltager</li>
-          <li>Fyll ut din profil slik at vi vet hvem du er</li>
-          <li>Registerer dine aktiviteter fortløpende</li>
-        </ul>
-        
-        <img src="/filnavn.png" alt="Kort beskrivelse av bildet"></img>
+      </header>
+      <section class="section content">
+        <div class="container">
+  
+            <p><strong>Trene. Telle. Trene.</strong></p>
+  
+            <p>Å aktivisere utviklingshemmede blir LITT lettere med Aktivitetscup.</p>
 
-        <p>Ved å delta i Aktivitetcup'en blir du automatisk med i konkurransen om å samle flest poeng.</p>
-        <p>På slutten av sesongen blir deltagerne (en kvinne og en mann) med flest poeng premiert.</p>
-        <p>I tillegg vil det dukke opp små konkurranser underveis i sesongen.</p>
+            <img src="/Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå-300x300.png" alt="aCup"></img>
 
-        <h2>Aktivitetcup.no</h2>
-        <p>Dette er første versjon. Vi kommer til å forbedre nettstedet underveis i sesongen.</p>
 
-        <h2>Nytt av året</h2>
-        <p>I år er systemet forbedret bittelitt. Skjemaene er like, men du vi vet hvem du er fordi du logger inn gjennom dette nettstedet. Vi håper det gjør opplevelsen bedre. Hvis du lar være å logge ut vil nettstedet huske deg fra gang til gang.</p>
-        <p>Du som var med oss i forrige sesong kan vente med å fylle i profilen, så fyller vi den med informasjonen vi allerede har så fort som mulig.</p>
-        <p>En del av informasjonen som kom med e-postene er ikke klart her på aktivitetscup.no enda, men vil komme snart.</p>
+            <h2>Bli med på 1-2-3</h2>
+            <ol>
+                <li>1 Skriv inn eposten din og passordet ditt.</li>
+                <li>2 Øv på å registrere en liksomaktivitet, ikke trykk «Send inn».</li>
+                <li>3 Registrer en ekte aktivitet, trykk «Send inn».</li>
+            </ol>
 
-        <h2>Kontakt</h2>
-        <p>Har du spørsmål eller problemer send en e-post til aktivitetscup@gmail.com.</p>
-      </div>
-    </section>
-  </article>
+            <p>Se på bruksanvisningen først eller vær gær'n og bli med uten å se på bruksanvisningen.</p>
+            (-cnapp-)
+
+
+            <p>Oppskrift 1</p>
+            <h2>Meld deg på Aktivitetscupen</h2>
+
+            <img src="/2 Sign up 1 IMG_0003.PNG" alt="Sign up 1 "></img>
+
+            <img src="/3 Sign up 1 IMG_0004.PNG" alt="Kort beskrivelse av bildet"></img>
+            
+            <p>Bruk et passord som er lett å huske, men hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang.</p>
+
+            (-cnapp-)&lt;Gå til inngangen: https://aktivitetscup.no/inngang&gt;
+
+            <p>Oppskrift 2</p>
+            <h2>Øv med en liksomaktivitet</h2>
+            <p>Det er lettere å registrere den første aktiviteten hvis du øver på å registrere en liksomaktivitet.</p>
+
+            <img src="/4 liksomaktivitet 1 IMG_0005_1.jpg" alt="Registrer ny liksomaktivitet 1"></img>
+
+            <img src="/5 liksomaktivitet 2 IMG_0013.2.jpg" alt="5 liksomaktivitet 2"></img>
+
+            <p>Oppskrift 3</p>
+            <h2>Registrer en ekte aktivitet i Aktivitetscupen</h2>
+            <p>Registrer en ekte aktivitet, avslutt med å trykke «Send inn».</p>
+
+            <img src="/4 liksomaktivitet 1 IMG_0005_1.jpg" alt="Registrer ny aktivitet"></img>
+
+            <img src="/7 trykk på trent knappen IMG_0013.3.jpg" alt="trykk på trent knappen"></img>
+
+            <img src="/8  trykk på egentrening knappen IMG_0014_3.jpg" alt="trykk på egentrening knappen"></img>
+
+            <img src="/9 trykk på dato knappen IMG_0015_3.jpg" alt="trykk på dato knappen"></img>
+
+            <img src="/10 trykk på OK dato knappen IMG_0016.2.jpg" alt="trykk på OK dato knappen"></img>
+
+            <img src="/11 ikke skriv kommentar IMG_0017.2.jpg" alt="ikke skriv kommentar"></img>
+
+            <img src="/12 trykk send inn IMG_0018.2.jpg" alt="trykk send inn"></img>
+
+            (-cnapp-)Jeg blir med nå. (-cnapp-)
+
+            <h2>Ny sesong, ny aktivitetscup</h2>
+            <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang og er litt enklere å bruke enn forrige sesong.</p>
+
+            (-cnapp-)Jeg blir med nå. (-cnapp-)
+
+            <h2>Ta kontakt</h2>
+            <p>Send ros, spørsmål og problemer til aktivitetscup@gmail.com.</p>
+</div>
+</section>
+</article>
 </template>
 
 <style lang="scss" scoped>
 @import "assets/utilities";
 .section {
-  background: $white;
+background: $white;
 }
+
 </style>
