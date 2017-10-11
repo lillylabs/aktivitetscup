@@ -29,5 +29,6 @@ export default {
 .nav-item:nth-child(2) {
   margin-left: auto;
 }
+
 </style>
 
