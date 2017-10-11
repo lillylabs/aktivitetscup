@@ -3,7 +3,7 @@
     <header class="hero is-light">
       <div class="container">
         <div class="hero-body has-text-centered">
-          <h1 class="title">Informasjon</h1>
+          <h1 class="title">Bruksanvisning</h1>
         </div>
       </div>
     </header>
