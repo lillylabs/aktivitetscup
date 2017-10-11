@@ -6,6 +6,7 @@
           <strong>Aktivitetscup</strong> er laget av
           <a href="http://lillylabs.no">Lilly Labs</a> for
           <a href="https://www.skiforbundet.no/funksjonshemmede/">Skiforbundet FH</a>.
+          <a href="https://aktivitetscup.no/info/">Les Bruksanvisning</a>.
         </p>
       </div>
     </div>
