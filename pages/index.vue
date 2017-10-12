@@ -18,11 +18,12 @@
           <nuxt-link to="/inngang" class="button is-medium is-primary is-outlined">
             Logg inn
           </nuxt-link>
-          <nuxt-link to="/info" class="button is-medium is-primary is-outlined">
-            Bruksanvisning
-          </nuxt-link>
-
+          <br/>
         </div>
+        <nuxt-link to="/info" class="button is-medium is-link">
+          eller les&nbsp;
+          <span>bruksanvisningen</span>
+        </nuxt-link>
       </div>
     </div>
   </section>
