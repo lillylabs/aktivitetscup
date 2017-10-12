@@ -9,6 +9,7 @@ let config = {
 
 export const data = store => {
   if (!process.browser) return
+  if (!config.apiKey) return
 
   const firebase = Firebase.initializeApp(config)
 
