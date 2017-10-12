@@ -34,7 +34,8 @@ body {
 .button.is-primary.is-outlined {
   background-color: rgba($white, 0.7);
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: rgba($white, 0.9);
     color: $primary;
   }
@@ -46,7 +47,8 @@ body {
     text-decoration: underline;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     background: none !important;
     span {
       text-decoration: none;
