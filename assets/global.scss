@@ -1,6 +1,9 @@
 html,
 body {
   height: 100%;
+  background-image: url(~/assets/background.jpeg);
+  background-blend-mode: multiply;
+  background-size: cover;
 }
 
 .content a:not(.button) {
@@ -15,6 +18,10 @@ body {
   }
 }
 
+.hero.is-light {
+  background-color: transparent;
+}
+
 .hero.is-fullheight {
   min-height: calc(100vh - 3.25rem);
 }
@@ -25,20 +32,12 @@ body {
 }
 
 .button.is-primary.is-outlined {
-  &:hover,
-  &:focus {
-    background-color: rgba($primary, 0.1);
-    color: $primary;
-  }
+  background-color: $white;
 }
 
 .help {
   font-size: 0.85rem;
 }
-
-// .button.is-primary:not(.is-outlined) {
-//   text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.2);
-// }
 
 ////////////////////////////////////////////////
 ////////////////////////////////////////////////

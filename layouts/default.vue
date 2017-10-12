@@ -1,7 +1,7 @@
 <template>
   <div>
     <NavBar/>
-    <nuxt class="background" />
+    <nuxt />
     <Bottom/>
   </div>
 </template>
@@ -19,10 +19,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.background {
-  background-image: url(~/assets/background.jpeg);
-  background-blend-mode: multiply;
-  background-size: cover;
-}
+
 </style>
 

@@ -3,8 +3,10 @@
     <div class="hero-body">
       <span class="button is-large is-static is-primary is-outlined is-loading"></span>
     </div>
-    <iframe v-if="ready" id=”my_typeform” :src="`https://lillylabs.typeform.com/to/${formId}?uid=${uid}&redirect=${redirect}`">
-    </iframe>
+    <div class="iframe">
+      <iframe v-if="ready" id=”my_typeform” :src="`https://lillylabs.typeform.com/to/${formId}?uid=${uid}&redirect=${redirect}`">
+      </iframe>
+    </div>
   </div>
 </template>
 
@@ -54,8 +56,15 @@ export default {
   margin: 0 auto;
 }
 
-iframe {
+.iframe {
   position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+iframe {
   height: 100%;
   width: 100%;
 }
