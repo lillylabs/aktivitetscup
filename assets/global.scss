@@ -32,7 +32,28 @@ body {
 }
 
 .button.is-primary.is-outlined {
-  background-color: $white;
+  background-color: rgba($white, 0.7);
+
+  &:hover,
+  &:focus {
+    background-color: rgba($white, 0.9);
+    color: $primary;
+  }
+}
+
+.button.is-link {
+  text-decoration: none;
+  span {
+    text-decoration: underline;
+  }
+
+  &:hover,
+  &:focus {
+    background: none !important;
+    span {
+      text-decoration: none;
+    }
+  }
 }
 
 .help {

@@ -25,7 +25,7 @@
           <div class="field">
             <label class="label">Passord</label>
             <div class="control has-icons-left">
-              <input v-model="password" class="input" type="password" placeholder="veldighemmelig">
+              <input v-model="password" class="input" type="password" placeholder="litthemmelig">
               <span class="icon is-small is-left">
                 <i class="fa fa-lock"></i>
               </span>
@@ -88,6 +88,7 @@ export default {
     }
   },
   beforeMount () {
+    console.log(this.$route.params.signup)
     this.signup = this.$route.params.signup
   },
   fetch ({ store, redirect }) {
@@ -102,7 +103,7 @@ export default {
 @import "assets/utilities";
 
 .container {
-  max-width: 35rem;
+  max-width: 35rem !important;
 }
 
 .selector {

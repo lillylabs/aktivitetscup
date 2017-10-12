@@ -3,24 +3,24 @@
     <header class="hero is-light">
       <div class="container">
         <div class="hero-body has-text-centered">
-          <h1 class="title">Informasjon</h1>
+          <h1 class="title">Bruksanvisning</h1>
         </div>
       </div>
     </header>
     <section class="section content">
       <div class="container">
-      
+
         <p>
           <img src="/1_Aktivitestcup-Trene.-Telle.-Trene.-Skiforbundblå.png" alt="aCup"></img>
         </p>
 
         <h2>Trene. Telle. Trene.</h2>
-  
+
         <p>Aktivitetscup gjør aktivisering av en utøver med utviklingshemning LITT lettere.</p>
-      
+
         <h2>Bli med på 1-2-3</h2>
         <ol>
-          <li>Skriv inn eposten din og passordet ditt.</li>
+          <li>Lag bruker med en e-post adresse og et passord du velger.</li>
           <li>Legg inn en aktivitet i Aktivitetscupen.</li>
           <li>Registrer enda en aktivitet.</li>
         </ol>
@@ -36,7 +36,7 @@
           &nbsp;
           <img src="/3_Sign_up_1_IMG_0004.PNG" alt="Kort beskrivelse av bildet"></img>
         </p>
-        <p>Bruk et passord som er lett å huske, men hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang.</p>
+        <p>Bruk et passord som er lett å huske, men hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Aktivitetscupen husker deg fra gang til gang.</p>
 
         <p>
           <nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Registerer deg</nuxt-link>
@@ -66,12 +66,18 @@
         <p>
           <nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Bli med nå</nuxt-link>
         </p>
-       
+
         <h2>Ny sesong, ny aktivitetscup</h2>
-        <p>Hvis du ikke logger deg ut av aktivitetscupen så trenger du ikke logge deg inn igjen. Den nye aktivitetscupen husker deg fra gang til gang. Vi har også fått en deilig ny oversikt over hvilke aktiviteter som er registrert.</p>
+        <p>Det er litt forandringer på Aktivitetscupen i år.</p>
+        <ul>
+          <li>Du må lage en bruker i det nye systemet.</li>
+          <li>Du trenger ikke fylle ut profilen, vi kan hente over fra det gamle systemet.</li>
+          <li>Hvis du ikke logger deg ut kan du komme tilbake til Aktivitetscupen, uten å måtte logge deg inn igjen.</li>
+          <li>Søndags e-postene blir stoppet. Du får istedet en deilig ny oversikt over hvilke aktiviteter som er registrert inne på siden.</li>
+        </ul>
 
         <p>
-          <nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Jeg er med!</nuxt-link>
+          <nuxt-link class="button is-primary is-medium is-outlined" :to="{ name: 'inngang', params: { signup: true }}">Lag bruker!</nuxt-link>
         </p>
 
         <h2>Ta kontakt</h2>

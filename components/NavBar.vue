@@ -5,8 +5,8 @@
         Aktivitetscup
       </nuxt-link>
       <span class="nav-item">
-        <nuxt-link to="/info">
-          <span>Informasjon</span>
+        <nuxt-link to="/info" class="navbar-item has-text-weight-bold">
+          <span>Bruksanvisning</span>
         </nuxt-link>
       </span>
     </div>
