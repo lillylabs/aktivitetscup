@@ -8,7 +8,6 @@
         <div class="container has-text-centered">
           <h1 class="title is-spaced">
             <span>Resultat</span>
-            <button @click="signOutUser()" class="button is-primary is-outlined is-small">Logg ut</button>
           </h1>
         </div>
       </div>
@@ -18,16 +17,16 @@
         <table class="table is-bordered is-striped" width="100%">
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Klubb</th>
-              <th>Mål</th>
-              <th>Sport</th>
-              <th>Sum poeng</th>
-              <th>Sum km</th>
+              <th @click="sort('name')">Name</th>
+              <th @click="sort('clubName')">Klubb</th>
+              <th @click="sort('goal')">Mål</th>
+              <th @click="sort('sport')">Sport</th>
+              <th @click="sort('totalPoints')">Sum poeng</th>
+              <th @click="sort('totalKm')">Sum km</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(result, key) in resultsByUserUserId" :key="key">
+            <tr v-for="(result, key) in sortedResults" :key="key" :data-userId="result.userId">
               <td>
                 {{ result.name }}
               </td>
@@ -56,7 +55,7 @@
 
 <script>
 
-import { mapMutations, mapState } from 'vuex'
+import { mapState } from 'vuex'
 const KM_PER_HOUR_ALPINE = 4
 
 function alpineAndCrossCountry (alpineHours, crossCountryKm) {
@@ -83,7 +82,28 @@ function totalKm (activities) {
 }
 
 export default {
+  data: function () {
+    return {
+      sortKey: 'name',
+      sortReverse: false
+    }
+  },
+  methods: {
+    sort: function (sortKey) {
+      if (sortKey === this.sortKey) {
+        this.sortReverse = !this.sortReverse
+      } else {
+        this.sortKey = sortKey
+        this.sortReverse = false
+      }
+    }
+  },
   computed: {
+    sortedResults () {
+      return this.results.sort((a, b) => {
+        return (a[this.sortKey] > b[this.sortKey] ? 1 : -1) * (this.sortReverse ? 1 : -1) * (this.sortKey === 'name' ? -1 : 1)
+      })
+    },
     ...mapState({
       ready: (store) => store.admin.activitiesByUserId && store.admin.profilesByUserId,
       activitiesByUserId: (store) => {
@@ -104,7 +124,7 @@ export default {
 
         return store.admin.profilesByUserId
       },
-      resultsByUserUserId: (store) => {
+      results: (store) => {
         if (!store.admin.activitiesByUserId || !store.admin.profilesByUserId) {
           return []
         }
@@ -114,6 +134,7 @@ export default {
           })
 
           return {
+            userId: userId,
             name: store.admin.profilesByUserId[userId].firstName + ' ' + store.admin.profilesByUserId[userId].lastName,
             clubName: store.admin.profilesByUserId[userId].clubName,
             goal: store.admin.profilesByUserId[userId].goal,
@@ -123,11 +144,6 @@ export default {
           }
         })
       }
-    })
-  },
-  methods: {
-    ...mapMutations({
-      signOutUser: 'auth/signOutUser'
     })
   },
   watch: {
