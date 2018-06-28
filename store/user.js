@@ -5,7 +5,7 @@ export const state = () => ({
 
 export const mutations = {
   activities (state, activities) {
-    console.log(activities)
+    console.log('user.activities', activities)
     activities = activities || {}
     state.activities = activities
   },

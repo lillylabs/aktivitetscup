@@ -21,11 +21,22 @@ export const data = store => {
       console.log(user.email, user.uid)
       store.commit('auth/userSignedIn', { uid: user.uid, email: user.email })
       userRefs.push(db.ref('activities/' + user.uid).on('value', (snapshot) => {
+        console.log('firebase user activities', snapshot.val())
         store.commit('user/activities', snapshot.val())
       }))
       userRefs.push(db.ref('profile/' + user.uid).on('value', (snapshot) => {
-        console.log('date', snapshot.val())
+        console.log('firebase profile', snapshot.val())
         store.commit('user/profile', snapshot.val())
+      }))
+
+      userRefs.push(db.ref('activities/').on('value', (snapshot) => {
+        console.log('firebase activitiesByUserId', snapshot.val())
+        store.commit('admin/activitiesByUserId', snapshot.val())
+      }))
+
+      userRefs.push(db.ref('profile/').on('value', (snapshot) => {
+        console.log('firebase profilesByUserId', snapshot.val())
+        store.commit('admin/profilesByUserId', snapshot.val())
       }))
     } else {
       console.log('no user')

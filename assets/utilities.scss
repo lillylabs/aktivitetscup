@@ -19,3 +19,7 @@ $primary: #0079cf;
 @import "~bulma/sass/utilities/animations";
 @import "~bulma/sass/utilities/mixins";
 @import "~bulma/sass/utilities/controls";
+
+.is-nowrap {
+  white-space: nowrap;
+}
