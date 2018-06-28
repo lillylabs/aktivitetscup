@@ -38,6 +38,11 @@ export const data = store => {
         console.log('firebase profilesByUserId', snapshot.val())
         store.commit('admin/profilesByUserId', snapshot.val())
       }))
+
+      userRefs.push(db.ref('inactiveUserIds/').on('value', (snapshot) => {
+        console.log('firebase inactiveUserIds', snapshot.val())
+        store.commit('admin/inactiveUserIds', snapshot.val())
+      }))
     } else {
       console.log('no user')
       userRefs.forEach(ref => {

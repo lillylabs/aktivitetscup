@@ -105,7 +105,7 @@ export default {
       })
     },
     ...mapState({
-      ready: (store) => store.admin.activitiesByUserId && store.admin.profilesByUserId,
+      ready: (store) => store.admin.activitiesByUserId && store.admin.profilesByUserId && store.admin.inactiveUserIds,
       activitiesByUserId: (store) => {
         if (!store.admin.activitiesByUserId) {
           return {}
@@ -125,7 +125,7 @@ export default {
         return store.admin.profilesByUserId
       },
       results: (store) => {
-        if (!store.admin.activitiesByUserId || !store.admin.profilesByUserId) {
+        if (!store.admin.activitiesByUserId || !store.admin.profilesByUserId || !store.admin.inactiveUserIds) {
           return []
         }
         return Object.keys(store.admin.activitiesByUserId).map((userId) => {
@@ -142,6 +142,8 @@ export default {
             totalPoints: totalPoints(activities),
             totalKm: totalKm(activities)
           }
+        }).filter(result => {
+          return !store.admin.inactiveUserIds[result.userId]
         })
       }
     })
